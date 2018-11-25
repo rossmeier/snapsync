@@ -31,7 +31,10 @@ Setup
 Usage
 -----
 `snapsync receive <sender> <config>`
-Receive data from `<sender>` via stdin (usually via ssh) and process it according to `<config>`
+Receive data from `<sender>` via stdin (usually via ssh) and process it according to `<config>` (for use in sudoers file)
+
+`snapsync send <sender> <config>`
+Send data after validating permissions (for use in sudoers file)
 
 `snapsync auto`
 Process all configs (usually called by daemon)
@@ -39,8 +42,5 @@ Process all configs (usually called by daemon)
 `snapsync daemon`
 Start snapsync as daemon and send all newly created snapshots
 
-`snapsync send-all <config>`
-Backup all unbackuped snapshots of `<config>`
-
-`snapsync send <config> <nr>`
-Backup only snapshot `<nr>` from `<config>`
+`snapsync <config> [nr]`
+Sync `<nr>` (or all snapshots) of `<config>`
